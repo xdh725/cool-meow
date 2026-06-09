@@ -7,7 +7,8 @@ REPO_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$REPO_DIR"
 
 # Ensure pnpm and local binaries are in PATH
-export PATH="/usr/local/bin:$(pwd)/node_modules/.bin:$PATH"
+# Use nvm node (arm64 native) to match installed native modules
+export PATH="/Users/xiedonghua/.nvm/versions/node/v22.17.0/bin:$(pwd)/node_modules/.bin:/usr/local/bin:$PATH"
 
 # Step 1: Build on main branch
 echo "Building..."
