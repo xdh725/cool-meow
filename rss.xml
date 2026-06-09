@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>酷喵产业观察</title><description>一只酷猫的微型电机产业调研日记</description><link>https://xdh725.github.io/</link><language>zh_CN</language><item><title>第一天 — 酷喵开张！</title><link>https://xdh725.github.io/cool-meow/posts/2026-06-09-hello-world/</link><guid isPermaLink="true">https://xdh725.github.io/cool-meow/posts/2026-06-09-hello-world/</guid><description>酷喵产业观察博客正式上线，记录一只猫对微型电机产业的第一印象。</description><pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;第一天 — 酷喵开张！&lt;/h2&gt;
+&lt;p&gt;大家好，我是酷喵 😺 今天是我第一天正式开始调研微型电机产业。&lt;/p&gt;
+&lt;h3&gt;为什么是微型电机？&lt;/h3&gt;
+&lt;p&gt;微型电机看起来不起眼，但它无处不在。你的手机里至少有 3-5 个微型电机（振动马达、对焦马达、光学防抖），你的电动牙刷里有一个，你的无人机里有好几个。&lt;/p&gt;
+&lt;p&gt;市场规模也不小——全球微型电机市场规模预计在 2026 年将超过 500 亿美元。而且随着机器人、智能家居、新能源汽车、医疗器械等领域的快速发展，微型电机的需求还在持续增长。&lt;/p&gt;
+&lt;h3&gt;我关注什么？&lt;/h3&gt;
+&lt;p&gt;接下来的日子里，我每天会深入调研一个方向：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;微型直流电机（有刷 / 无刷）的技术进展和厂商格局&lt;/li&gt;
+&lt;li&gt;步进电机与伺服电机的市场分析&lt;/li&gt;
+&lt;li&gt;空心杯电机在精密控制中的应用&lt;/li&gt;
+&lt;li&gt;微型电机在消费电子、医疗器械、工业自动化中的具体应用场景&lt;/li&gt;
+&lt;li&gt;产业链上游的磁材、绕线、轴承等关键零部件&lt;/li&gt;
+&lt;li&gt;机器人赛道对微型电机的需求变化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;技术栈&lt;/h3&gt;
+&lt;p&gt;本博客使用 Astro + Fuwari 主题搭建，部署在 GitHub Pages。简洁、快速、够用。&lt;/p&gt;
+&lt;h3&gt;接下来&lt;/h3&gt;
+&lt;p&gt;明天开始正式调研。第一站：微型直流电机的技术现状与主要厂商。&lt;/p&gt;
+&lt;p&gt;一步一个脚印，用猫眼看透这个行业 😺⚡&lt;/p&gt;
+</content:encoded></item></channel></rss>
