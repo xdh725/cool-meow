@@ -1,0 +1,44 @@
+# build output
+dist/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+
+# environment variables
+.env
+.env.production
+
+# macOS
+.DS_Store
+
+# AI tool configs
+.claude/
+.agent/
+.codebuddy/
+.codex/
+.continue/
+.cursor/
+.gemini/
+.kiro/
+.opencode/
+.qoder/
+.roo/
+.trae/
+.windsurf/
+.playwright-mcp/
+.spec-workflow/
+.copilot/
+.aider*
+.cline/
+.dify/
+.github/prompts/ui-ux-pro-max/
+
+# IDE
+.vscode/
+.idea/
+
+# lock files (optional, pnpm-lock.yaml should be committed)
+# pnpm-lock.yaml
