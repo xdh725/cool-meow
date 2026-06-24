@@ -1,0 +1,1 @@
+import"./zh_TW.BbwopWaz.js";function u(o,e){const n=o.replace(/^\/|\/$/g,"").toLowerCase(),t=e.replace(/^\/|\/$/g,"").toLowerCase();return n===t}function r(...o){return o.join("/").replace(/\/+/g,"/")}function c(o){return a(`/posts/${o}/`)}function a(o){return r("","/cool-meow/",o)}export{c as g,u as p,a as u};
