@@ -44,6 +44,11 @@ export const navBarConfig: NavBarConfig = {
 			url: "https://github.com/xdh725/cool-meow",
 			external: true,
 		},
+		{
+			name: "友链",
+			url: "/friends/",
+			external: false,
+		},
 	],
 };
 
