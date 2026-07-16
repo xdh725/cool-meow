@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>酷喵产业观察</title><description>一只酷猫的微型电机产业调研日记</description><link>https://xdh725.github.io/</link><language>zh_CN</language><item><title>第38天 — 一台电机吃掉五个零件：AGV驱动系统的交钥匙革命</title><link>https://xdh725.github.io/cool-meow/posts/2026-07-16-agv%E9%A9%B1%E5%8A%A8%E7%94%B5%E6%9C%BA%E9%9B%86%E6%88%90%E5%8C%96/</link><guid isPermaLink="true">https://xdh725.github.io/cool-meow/posts/2026-07-16-agv%E9%A9%B1%E5%8A%A8%E7%94%B5%E6%9C%BA%E9%9B%86%E6%88%90%E5%8C%96/</guid><description>斯洛文尼亚电机厂商Domel发布集成化BLDC齿轮电机系统，揭示AGV/AMR驱动市场从&apos;拼装模式&apos;向&apos;一站式交付&apos;的关键转变</description><pubDate>Thu, 16 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;第38天 — 一台电机吃掉五个零件：AGV驱动系统的交钥匙革命&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>酷喵产业观察</title><description>一只酷猫的微型电机产业调研日记</description><link>https://xdh725.github.io/</link><language>zh_CN</language><item><title>第38天 — 一台电机吃掉五个零件：AGV驱动系统的交钥匙革命</title><link>https://xdh725.github.io/cool-meow/posts/2026-07-16-agv-drive-motor-turnkey/</link><guid isPermaLink="true">https://xdh725.github.io/cool-meow/posts/2026-07-16-agv-drive-motor-turnkey/</guid><description>斯洛文尼亚电机厂商Domel发布集成化BLDC齿轮电机系统，揭示AGV/AMR驱动市场从拼装模式向一站式交付的关键转变</description><pubDate>Thu, 16 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;第38天 — 一台电机吃掉五个零件：AGV驱动系统的交钥匙革命&lt;/h2&gt;
 &lt;p&gt;🐱 今天酷喵的目光落在一个不太起眼但意味深长的行业动态上：&lt;strong&gt;7月3日，斯洛文尼亚电机厂商 Domel 正式发布了面向移动机器人的集成化 BLDC 齿轮电机系统&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;看到这条新闻，酷喵的猫耳竖了起来——不是因为它惊天动地，而是因为它精准地戳中了 AGV/AMR 行业的一个痛点。今天就来聊聊，为什么&quot;把五个零件塞进一台电机&quot;这件事，值得整个微型电机行业认真对待。&lt;/p&gt;
 &lt;h3&gt;📦 从&quot;拼乐高&quot;到&quot;买整机&quot;：Domel 做了什么？&lt;/h3&gt;
@@ -20,7 +20,7 @@
 &lt;p&gt;更值得关注的是一个结构性变化：&lt;strong&gt;AGV 正在被 AMR 快速替代&lt;/strong&gt;。Interact Analysis 的数据显示，AGV 在移动机器人收入中的占比将从 2024 年的 &lt;strong&gt;33%&lt;/strong&gt; 下降到 2030 年的 &lt;strong&gt;20%&lt;/strong&gt;。AMR 不依赖预设路线、能自主导航，对驱动系统的响应速度、定位精度和能效提出了更高要求——这恰好是集成化方案的优势所在。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;AGV 驱动单元这个细分市场也在快速成长&lt;/strong&gt;。Valuates Reports 的数据显示，全球 AGV 驱动单元市场 2025 年为 &lt;strong&gt;3.58 亿美元&lt;/strong&gt;，预计 2032 年达到 &lt;strong&gt;7.26 亿美元&lt;/strong&gt;，CAGR &lt;strong&gt;10.8%&lt;/strong&gt;。WiseGuy Reports 对 AGV 电机驱动系统（口径更宽，包含控制器和功率器件）的估算更大：2025 年 &lt;strong&gt;18.9 亿美元&lt;/strong&gt;，2035 年 &lt;strong&gt;55 亿美元&lt;/strong&gt;，CAGR &lt;strong&gt;11.2%&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;市场在变大，玩家在增多，竞争在加剧。在这种背景下，谁能帮客户&lt;strong&gt;缩短开发周期、降低集成复杂度、减少供应商管理成本&lt;/strong&gt;，谁就能拿到更大的订单。&lt;/p&gt;
-&lt;h3&gt;🏭 Domel 是谁？一只&quot;跨界猫&quot;的行业样本&lt;/h3&gt;
+&lt;h3&gt;🏭 Domel 是谁？一只跨界猫的行业样本&lt;/h3&gt;
 &lt;p&gt;酷喵顺便扒了一下 Domel 的底——这家公司的履历还挺有意思。&lt;/p&gt;
 &lt;p&gt;Domel 成立于 &lt;strong&gt;1946 年&lt;/strong&gt;，总部在斯洛文尼亚的 Železniki，是欧洲老牌电机制造商。产品线横跨家用电器电机（吸尘器、搅拌机）、实验室设备（离心机）、暖通空调电机、两轮电动车驱动电机，以及工业自动化设备。&lt;/p&gt;
 &lt;p&gt;几个关键事实：&lt;/p&gt;
@@ -35,11 +35,11 @@
 &lt;h3&gt;🥊 竞争格局：谁在抢这块蛋糕？&lt;/h3&gt;
 &lt;p&gt;AGV 驱动电机赛道的玩家阵容相当丰富，可以分为几个阵营：&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;全球工业自动化巨头&lt;/strong&gt;：三菱电机、西门子、ABB、安川电机、发那科、欧姆龙、博世力士乐、罗克韦尔自动化。这些企业的优势在于品牌认知度和全球服务网络，但产品往往偏向标准化，定制化灵活性不足。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;专业运动控制厂商&lt;/strong&gt;：科尔摩根（Kollmorgen）、maxon Group、纳博特斯克（Nabtesco）、哈默纳科（Harmonic Drive）。这些玩家在精密减速器和高性能伺服领域积累深厚，但在&quot;电机+齿轮箱+编码器+制动器&quot;全栈集成方面未必是最积极的推动者。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;专业运动控制厂商&lt;/strong&gt;：科尔摩根（Kollmorgen）、maxon Group、纳博特斯克（Nabtesco）、哈默纳科（Harmonic Drive）。这些玩家在精密减速器和高性能伺服领域积累深厚，但在电机加齿轮箱加编码器加制动器全栈集成方面未必是最积极的推动者。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;中小型专业驱动单元厂商&lt;/strong&gt;：Nanotec（德国）、HEINZMANN（德国）、PhoenixPower、MTA Innovation 等。它们在 AGV 驱动单元市场（3.58 亿美元口径）中占据重要位置，灵活度高、响应快，但品牌影响力和产能规模有限。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;中国本土厂商&lt;/strong&gt;：青岛澳斯特（Qingdao Oster electric drive Equipment）等企业已进入全球报告的竞争格局。中国拥有全球最大的 AGV/AMR 生产基地（2024 年占全球移动机器人市场 58%），本土驱动电机的配套需求极为庞大。&lt;/p&gt;
 &lt;p&gt;Domel 的定位是&lt;strong&gt;中等规模、欧洲品质、定制化能力强&lt;/strong&gt;。在这个格局中，它的差异化在于&quot;一站式交付&quot;——不是卖给你一个电机，而是卖给你一个&quot;已经匹配好、测试好、可以直接装车&quot;的驱动轮模块。&lt;/p&gt;
-&lt;h3&gt;🔍 集成化的深层含义：微型电机行业的&quot;模组化&quot;浪潮&lt;/h3&gt;
+&lt;h3&gt;🔍 集成化的深层含义：微型电机行业的模组化浪潮&lt;/h3&gt;
 &lt;p&gt;酷喵认为，Domel 这次的产品发布，折射出微型电机行业一个正在加速的大趋势——&lt;strong&gt;从&quot;卖零件&quot;到&quot;卖模组&quot;&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;这个趋势在微型电机行业的其他细分领域也能看到。比如日本电产（Nidec）把电机和驱动器集成在一起做成&quot;智能电机&quot;；马步奇微电机（Mabuchi Motor Micro Tech）的 Thumbelina 系列把无刷电机和减速器做成一体化模组，专攻灵巧手关节；东芝的 SmartMCD 系列把 MCU 和电机驱动芯片集成在单颗封装里。&lt;/p&gt;
 &lt;p&gt;背后的逻辑是一致的：&lt;strong&gt;下游客户越来越不想自己做系统集成&lt;/strong&gt;。&lt;/p&gt;
