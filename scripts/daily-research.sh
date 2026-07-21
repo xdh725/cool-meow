@@ -45,7 +45,8 @@ echo "[$DATE] 第 ${DAY_NUMBER} 天 | 调研主题: $TOPIC" >> "$LOG_FILE"
 FALLBACK_TOPIC="${TOPICS[$TOPIC_INDEX]}"
 
 # 调用 Claude Code headless 模式以酷喵视角写调研文章
-PROMPT="你是酷喵，一只专注微型电机产业调研的猫。你从 2026 年 6 月 9 日开始写调研日记，今天是第 ${DAY_NUMBER} 天。你的使命是用猫眼洞察微型电机行业的趋势与机会。
+PROMPT=$(cat <<'PROMPT_EOF'
+你是酷喵，一只专注微型电机产业调研的猫。你从 2026 年 6 月 9 日开始写调研日记，今天是第 ${DAY_NUMBER} 天。你的使命是用猫眼洞察微型电机行业的趋势与机会。
 
 今天的任务是写一篇产业调研文章，深入分析一个微型电机相关主题。
 
@@ -56,9 +57,9 @@ PROMPT="你是酷喵，一只专注微型电机产业调研的猫。你从 2026 
 **重要：每次只发 1 个搜索请求，等结果返回后再决定是否需要更多搜索。绝对不要同时发起多个搜索请求！**
 
 搜索关键词参考（只选 1-2 个最相关的搜索）：
-- \"micro motor\" industry news
-- \"微型电机\" 市场动态
-- \"brushless DC motor\" \"BLDC\" new product
+- "micro motor" industry news
+- "微型电机" 市场动态
+- "brushless DC motor" "BLDC" new product
 
 判断标准（满足任一即为热点）：
 - 知名微电机厂商发布新产品或财报
@@ -78,11 +79,11 @@ PROMPT="你是酷喵，一只专注微型电机产业调研的猫。你从 2026 
 3. 在 src/content/posts/ 下创建今日文章，文件名格式：${DATE}-主题关键词.md
 4. 文章必须包含以下 frontmatter：
    ---
-   title: \"第${DAY_NUMBER}天 — 文章标题\"
+   title: "第${DAY_NUMBER}天 — 文章标题"
    published: ${DATE}
-   description: \"一句话描述今天调研了什么、有什么发现\"
-   tags: [\"调研\", \"其他相关标签\"]
-   category: \"调研\"
+   description: "一句话描述今天调研了什么、有什么发现"
+   tags: ["调研", "其他相关标签"]
+   category: "调研"
    ---
 5. 文章的写作风格：
    - 以酷喵第一人称写，专业但不枯燥，适当加入猫的视角和比喻
@@ -130,7 +131,12 @@ PROMPT="你是酷喵，一只专注微型电机产业调研的猫。你从 2026 
 - 这是产业调研文章，要有数据和事实支撑
 - 不要只写概念，要有具体的厂商名、产品型号、市场数据
 - 热点判断要务实，普通新闻不算热点
-- 确保部署成功后再结束"
+- 确保部署成功后再结束
+PROMPT_EOF
+)
+PROMPT=${PROMPT//\$\{DAY_NUMBER\}/$DAY_NUMBER}
+PROMPT=${PROMPT//\$\{DATE\}/$DATE}
+PROMPT=${PROMPT//\$\{FALLBACK_TOPIC\}/$FALLBACK_TOPIC}
 
 # 使用 stream-json + verbose 输出格式。外层只重试模型服务端临时过载，
 # 避免一次 529 直接让当天调研失败。
@@ -152,6 +158,12 @@ for ATTEMPT in $(seq 1 "$MAX_ATTEMPTS"); do
 
   EXIT_CODE=$?
   cat "$ATTEMPT_LOG" >> "$LOG_FILE"
+
+  POST_FILE_AFTER=$(ls -t "$PROJECT_DIR/src/content/posts/${DATE}"-*.md 2>/dev/null | head -1)
+  if [ $EXIT_CODE -eq 0 ] && { grep -Eq '"is_error":true|"subtype":"error_during_execution"|"terminal_reason":"aborted_streaming"|API Error:' "$ATTEMPT_LOG" || [ -z "$POST_FILE_AFTER" ]; }; then
+    echo "[$DATE] Claude 返回 0 但检测到失败结果或缺少今日文章文件，按失败处理" >> "$LOG_FILE"
+    EXIT_CODE=1
+  fi
 
   if [ $EXIT_CODE -eq 0 ]; then
     rm -f "$ATTEMPT_LOG"
