@@ -132,15 +132,55 @@ PROMPT="你是酷喵，一只专注微型电机产业调研的猫。你从 2026 
 - 热点判断要务实，普通新闻不算热点
 - 确保部署成功后再结束"
 
-# 使用 stream-json + verbose 输出格式
-echo "$PROMPT" | claude --print \
-  --output-format stream-json \
-  --verbose \
-  --model sonnet \
-  --allowedTools "WebSearch,WebFetch,mcp__exa__web_search_exa,mcp__exa__web_fetch_exa,Read,Write,Edit,Bash,Glob,Grep" \
-  >> "$LOG_FILE" 2>&1
+# 使用 stream-json + verbose 输出格式。外层只重试模型服务端临时过载，
+# 避免一次 529 直接让当天调研失败。
+MAX_ATTEMPTS=3
+RETRY_DELAYS=(300 900)
+EXIT_CODE=1
+BASE_GIT_STATUS=$(git status --porcelain)
 
-EXIT_CODE=$?
+for ATTEMPT in $(seq 1 "$MAX_ATTEMPTS"); do
+  ATTEMPT_LOG=$(mktemp "/tmp/cool-meow-claude-${DATE}.XXXXXX")
+  echo "[$DATE] Claude 调研尝试 ${ATTEMPT}/${MAX_ATTEMPTS}" >> "$LOG_FILE"
+
+  echo "$PROMPT" | claude --print \
+    --output-format stream-json \
+    --verbose \
+    --model sonnet \
+    --allowedTools "WebSearch,WebFetch,mcp__exa__web_search_exa,mcp__exa__web_fetch_exa,Read,Write,Edit,Bash,Glob,Grep" \
+    >> "$ATTEMPT_LOG" 2>&1
+
+  EXIT_CODE=$?
+  cat "$ATTEMPT_LOG" >> "$LOG_FILE"
+
+  if [ $EXIT_CODE -eq 0 ]; then
+    rm -f "$ATTEMPT_LOG"
+    break
+  fi
+
+  if ! grep -Eiq 'API Error: 529|error_status":529|overloaded|访问量过大' "$ATTEMPT_LOG"; then
+    echo "[$DATE] 非模型过载错误，不自动重试，保留现场供排查" >> "$LOG_FILE"
+    rm -f "$ATTEMPT_LOG"
+    break
+  fi
+
+  CURRENT_GIT_STATUS=$(git status --porcelain)
+  if [ "$CURRENT_GIT_STATUS" != "$BASE_GIT_STATUS" ] || ls "$PROJECT_DIR/src/content/posts/${DATE}"-*.md >/dev/null 2>&1; then
+    echo "[$DATE] 已产生部分产物，不自动重试，避免覆盖或重复发布" >> "$LOG_FILE"
+    rm -f "$ATTEMPT_LOG"
+    break
+  fi
+
+  if [ "$ATTEMPT" -lt "$MAX_ATTEMPTS" ]; then
+    DELAY=${RETRY_DELAYS[$((ATTEMPT - 1))]}
+    echo "[$DATE] Claude 服务端临时过载，${DELAY}s 后重试" >> "$LOG_FILE"
+    rm -f "$ATTEMPT_LOG"
+    sleep "$DELAY"
+  else
+    echo "[$DATE] Claude 服务端临时过载，已达到最大重试次数" >> "$LOG_FILE"
+    rm -f "$ATTEMPT_LOG"
+  fi
+done
 
 if [ $EXIT_CODE -eq 0 ]; then
   echo "[$DATE] 调研文章完成！退出码: $EXIT_CODE" >> "$LOG_FILE"
