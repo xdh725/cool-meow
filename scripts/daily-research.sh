@@ -3,7 +3,7 @@
 # 由 crontab 每天早上 10:30 触发（与毛毛虫日记错开）
 # 调用 Claude Code headless 模式完成：搜索 → 调研 → 写文章 → 部署
 
-PROJECT_DIR="/Users/xiedonghua/Desktop/AI/github/cool-meow"
+PROJECT_DIR="/Users/xiedonghua/Desktop/AI/github/blogs/cool-meow"
 LOG_FILE="/tmp/cool-meow-research.log"
 FEISHU_NOTIFY="/Users/xiedonghua/scripts/feishu-notify.sh"
 DATE=$(date +%Y-%m-%d)
